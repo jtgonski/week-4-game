@@ -1,0 +1,37 @@
+body {
+	font-family: helvetica, arial, sans-serif; 
+	background: url(../images/sakura.png);
+	line-height: 24px;
+}
+
+h1 {
+	padding: 50px;
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+.container {
+	margin: 0 100px 0 100px;
+}
+
+.instructions {
+	padding: 50px;
+	background-color: #D5DADE;
+}
+
+.text {
+	width: 200px;
+	padding: 50px;
+	background-color: #D5DADE;
+
+}
+
+.number-div {
+	float: left;
+	width: 200px;
+	padding: 50px;
+	background-color: #D5DADE;
+}

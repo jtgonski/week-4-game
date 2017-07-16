@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Cat Collector</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script
+  src="http://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+	<script src = "assets/javascript/game.js"></script>
+</head>
+<body>
+
+<!-- header -->
+<div>
+	<h1>The Cat Collector </h1>
+</div>
+<!-- div for instructions -->
+<div class="container"> 
+	<div class="instructions">
+		<p>
+			You will be give an random number at the start of the game. <br>
+			There are four cats below. By clicking on a cat you will add a specific amount of points to your total score. <br>
+			You win the game by matching your total score to the random number, and you LOSE the game if your total score goes above the random number. <br>
+			The value of each cat is hidden from you until you click on it. <br>
+			Each time when the game starts, the game will change the values of each cat. <br> 
+		</p>
+	</div>
+	<div class="number-div">
+		<h3 id="comp-num">00</h3>
+	</div>
+<!-- row/ div for randomly generated number/div to track wins, losses -->
+	<div class="text">
+		<p id="winlose">Lets Get Started!</p>
+		<p id="wins">wins: 0</p>
+		<p id="losses">losses: 0</p>
+	</div>
+
+<!-- div for 4 chrystal images/buttons -->
+	<div class="image-div">
+		 <input type="image" src="assets/images/cat-hotdog.jpeg" alt="click me" width="200" height="200" class="cat" id="cat1">
+		 <input type="image" src="assets/images/cat-in-the-box2.jpeg" alt="click me" width="200" height="200" class="cat" id="cat2">
+		 <input type="image" src="assets/images/fat-cat-in-snow.jpeg" alt="click me" width="200" height="200" class="cat" id="cat3">
+		 <input type="image" src="assets/images/annoyed_cat.jpeg" alt="click me" width="200" height="200" class="cat" id="cat4">
+	</div>
+	<!-- div for your current guess (totaled) -->
+	<div class="number-div">
+		<h3 id="user-score">00</h3>
+	</div>
+</div>
+
+
+
+</body>
+</html>
