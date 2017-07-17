@@ -9,11 +9,12 @@ var catValue = function(num) {
 	var num = 1 + Math.floor(Math.random() * 12);
 	return num;
 }
+var number;
 //create cat array, in order to assign values more easily to each cat picture
-// var catArray = [];
+
 
 // function cats() {
-// 	for (i = 0; 0 < input.length; i++) {
+// 	for (var i = 0; 0 < input.length; i++) {
 // 		catArray.push($(".cats"));
 // 	}
 // };
@@ -22,32 +23,70 @@ console.log("Computer Number: " + compNumber);
 console.log("1st catValue " + catValue());
 console.log("2nd catValue " + catValue());
 
+var catImageArray = ["assets/images/cat-hotdog.jpeg", "assets/images/cat-in-the-box2.jpeg", 
+	"assets/images/fat-cat-in-snow.jpeg", "assets/images/annoyed_cat.jpeg"];
 
+function appendCatImages() {
+	for (var i = 0; i < catImageArray.length; i++) {
+		var imgDiv = $("<div class='image-div-jq' data-cat-data="+catValue()+">");
+
+		var image = $("<img class='cat'>");
+
+		image.attr("src", catImageArray[i]).height(200).width(200);
+
+		imgDiv.append(image);
+
+		$(".image-div").append(imgDiv);
+	}
+
+}
+
+appendCatImages();
+
+function reset() {
+	userScore = 0;
+	$("#user-score").text(userScore);
+	compNumber =  19 + Math.floor(Math.random() * 120);
+	$("#comp-num").text(compNumber);
+	$(".image-div-jq").remove();
+	appendCatImages();
+
+}
 
 //randomly generate some number between 19 and 120 (computer guess)
 	$("#comp-num").text(compNumber);
 
-//randomly generate numbers for each cat between 1-12
-
-
-	 $("input").each(function () {
-	 	
-        $(this).attr("cat-data", catValue());
-
-        console.log($(this).attr("cat-data"));
-    });
-
-
 
 //create click event for each cat 
-		$(document)on("click", function() {
+		$(document).on("click", ".image-div-jq", function() {
 
 			// add clicked number to existing number score 
-			userScore = userScore + $(this).attr("cat-data"); 
+			userScore = userScore + $(this).data("cat-data"); 
 
-			console.log("this is the new score: " + userScore);
-			$("#user-score").text(userScore);
+			if (userScore < compNumber) {
+
+				console.log("this is the new score: " + userScore);
+				$("#user-score").text(userScore);
+			}
+
+			else if (userScore === compNumber) {
+				alert("you win!"); 
+				wins++;
+				$("#wins").text("wins: " + wins);
+				reset();
+			}
+
+			else if (userScore > compNumber) {
+				alert("you lose!");
+				losses++;
+				$("#losses").text("losses: " + losses);
+				reset();
+			}
+			
 		});
+
+console.log(userScore);
+
 
 //constantly check if new number matches computernumber 
 //if new number === computernumber, wins plus 1, reset game, alert you win! 
