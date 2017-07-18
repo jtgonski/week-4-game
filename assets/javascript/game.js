@@ -10,22 +10,18 @@ var catValue = function(num) {
 	return num;
 }
 var number;
-//create cat array, in order to assign values more easily to each cat picture
 
-
-// function cats() {
-// 	for (var i = 0; 0 < input.length; i++) {
-// 		catArray.push($(".cats"));
-// 	}
-// };
-
+//testing that the random number selectors work in the console log
 console.log("Computer Number: " + compNumber);
 console.log("1st catValue " + catValue());
 console.log("2nd catValue " + catValue());
 
+
+//make an array of the cat images (crystal images)
 var catImageArray = ["assets/images/cat-hotdog.jpeg", "assets/images/cat-in-the-box2.jpeg", 
 	"assets/images/fat-cat-in-snow.jpeg", "assets/images/annoyed_cat.jpeg"];
 
+//function to create cat images with random values assigned to each
 function appendCatImages() {
 	for (var i = 0; i < catImageArray.length; i++) {
 		var imgDiv = $("<div class='image-div-jq' data-cat-data="+catValue()+">");
@@ -38,11 +34,11 @@ function appendCatImages() {
 
 		$(".image-div").append(imgDiv);
 	}
-
 }
-
+//call function 
 appendCatImages();
 
+//function to reset the game after a win or loss
 function reset() {
 	userScore = 0;
 	$("#user-score").text(userScore);
@@ -54,8 +50,7 @@ function reset() {
 }
 
 //randomly generate some number between 19 and 120 (computer guess)
-	$("#comp-num").text(compNumber);
-
+		$("#comp-num").text(compNumber);
 
 //create click event for each cat 
 		$(document).on("click", ".image-div-jq", function() {
@@ -63,20 +58,26 @@ function reset() {
 			// add clicked number to existing number score 
 			userScore = userScore + $(this).data("cat-data"); 
 
+			//constantly check if new number matches computernumber 
+			//if less than computer number, continue the game
 			if (userScore < compNumber) {
 
 				console.log("this is the new score: " + userScore);
 				$("#user-score").text(userScore);
 			}
 
+			//if new number === computernumber, wins plus 1, reset game, alert you win! 
 			else if (userScore === compNumber) {
+
 				alert("you win!"); 
 				wins++;
 				$("#wins").text("wins: " + wins);
 				reset();
 			}
 
+			//if new number > computernumber, losses plus 1, reset game, alert you lose! 
 			else if (userScore > compNumber) {
+				
 				alert("you lose!");
 				losses++;
 				$("#losses").text("losses: " + losses);
@@ -84,16 +85,6 @@ function reset() {
 			}
 			
 		});
-
-console.log(userScore);
-
-
-//constantly check if new number matches computernumber 
-//if new number === computernumber, wins plus 1, reset game, alert you win! 
-//if new number < computernumber, continue game 
-//if new number > computernumber, losses plus 1, reset game, alert you lose! 
-
-
 
 });
 
