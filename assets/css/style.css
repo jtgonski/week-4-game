@@ -15,17 +15,24 @@ h3 {
 
 .container {
 	margin: 0 100px 0 100px;
+
 }
 
 .instructions {
 	padding: 50px;
 	background-color: #D5DADE;
+	border: 5px solid black;
+	margin: 15px;
 }
 
 .text {
 	width: 200px;
-	padding: 50px;
+	height: 150px;
+	padding: 10px;
 	background-color: #D5DADE;
+	border: 5px solid black;
+	margin: 15px;
+	float: left;
 
 }
 
@@ -34,4 +41,21 @@ h3 {
 	width: 200px;
 	padding: 50px;
 	background-color: #D5DADE;
+	border: 1px solid black;
 }
+
+.image-div-jq {
+	float: left;
+	margin: 10px;
+	background-color:  #D5DADE;
+	border: 2px solid black;
+	line-height: 0;
+}
+
+.row {
+	clear: left;
+	width: 100%;
+	padding: 10px;
+
+}
+
